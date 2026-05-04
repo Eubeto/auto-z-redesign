@@ -653,10 +653,6 @@ img, video {
   margin-left: .25rem;
 }
 
-.ml-1\.5 {
-  margin-left: .375rem;
-}
-
 .ml-auto {
   margin-left: auto;
 }
@@ -1302,10 +1298,6 @@ img, video {
   overflow: hidden;
 }
 
-.rounded {
-  border-radius: .25rem;
-}
-
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1866,6 +1858,10 @@ img, video {
   padding: .125rem;
 }
 
+.p-1 {
+  padding: .25rem;
+}
+
 .p-2 {
   padding: .5rem;
 }
@@ -1896,15 +1892,6 @@ img, video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-1 {
-  padding: .25rem;
-}
-
-.px-1\.5 {
-  padding-left: .375rem;
-  padding-right: .375rem;
 }
 
 .px-2 {
@@ -2197,12 +2184,12 @@ img, video {
   letter-spacing: .025em;
 }
 
-.tracking-widest {
-  letter-spacing: .1em;
-}
-
 .tracking-wider {
   letter-spacing: .05em;
+}
+
+.tracking-widest {
+  letter-spacing: .1em;
 }
 
 .text-\[\#111\] {
@@ -2900,6 +2887,10 @@ html.light .hero-spotlight {
   background-color: rgba(255, 255, 255, .02);
 }
 
+.hover\:bg-white\/\[0\.05\]:hover {
+  background-color: rgba(255, 255, 255, .05);
+}
+
 .hover\:bg-white\/\[0\.06\]:hover {
   background-color: rgba(255, 255, 255, .06);
 }
@@ -2908,18 +2899,14 @@ html.light .hero-spotlight {
   background-color: rgba(255, 255, 255, .1);
 }
 
-.hover\:bg-white\/\[0\.05\]:hover {
-  background-color: rgba(255, 255, 255, .05);
+.hover\:text-slate-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(203, 213, 225, var(--tw-text-opacity, 1));
 }
 
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
-}
-
-.hover\:text-slate-300:hover {
-  --tw-text-opacity: 1;
-  color: rgba(203, 213, 225, var(--tw-text-opacity, 1));
 }
 
 .focus\:outline-none:focus {
