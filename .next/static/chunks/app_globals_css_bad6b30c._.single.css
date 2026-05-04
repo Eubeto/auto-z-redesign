@@ -1148,6 +1148,10 @@ img, video {
   justify-content: space-between;
 }
 
+.gap-0 {
+  gap: 0;
+}
+
 .gap-0\.5 {
   gap: .125rem;
 }
@@ -1194,10 +1198,6 @@ img, video {
 
 .gap-\[1px\], .gap-px {
   gap: 1px;
-}
-
-.gap-0 {
-  gap: 0;
 }
 
 .gap-x-5 {
