@@ -80,7 +80,7 @@ __turbopack_context__.s([
     ()=>skills
 ]);
 const siteConfig = {
-    name: 'AUTO-Z',
+    name: 'autoz',
     nameSuffix: 'TECH',
     tagline: 'Automatize o Seu Stand Automóvel com IA',
     description: 'Qualifique Leads 24/7 em Portugal',
@@ -400,7 +400,7 @@ const plans = [
             'Suporte prioritário'
         ],
         insight: 'Nem todos os stands precisam deste plano. Mas quando o volume cresce, este plano evita o caos.',
-        cta: 'Falar com a equipa AUTO-Z',
+        cta: 'Falar com a equipa autoz',
         highlighted: false,
         ctaVariant: 'whatsapp'
     }
@@ -684,7 +684,7 @@ function Footer() {
                             children: [
                                 "© ",
                                 __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["siteConfig"].year,
-                                " AUTO-Z. Todos os direitos reservados."
+                                " autoz. Todos os direitos reservados."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/layout/Footer.tsx",

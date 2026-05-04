@@ -14,11 +14,11 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
 
   const setLang = (l: Lang) => {
     setLangState(l)
-    localStorage.setItem('auto-z-lang', l)
+    localStorage.setItem('autoz-lang', l)
   }
 
   useEffect(() => {
-    const saved = localStorage.getItem('auto-z-lang') as Lang | null
+    const saved = localStorage.getItem('autoz-lang') as Lang | null
     if (saved && ['pt', 'en', 'es'].includes(saved)) setLangState(saved)
   }, [])
 

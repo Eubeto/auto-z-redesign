@@ -157,7 +157,7 @@ function WhatsAppPhone({ visible, showTyping }: { visible: number; showTyping: b
 
               {/* Name & status */}
               <div className="flex-1 min-w-0">
-                <div className="text-white text-[13.5px] font-semibold leading-tight">Auto-Z Agent</div>
+                <div className="text-white text-[13.5px] font-semibold leading-tight">autoz Agent</div>
                 <div className="text-[#A8D5C9] text-[10.5px] mt-0.5">online agora · resposta imediata</div>
               </div>
 

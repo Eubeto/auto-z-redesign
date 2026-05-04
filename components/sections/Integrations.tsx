@@ -42,7 +42,7 @@ export default function Integrations() {
               <span className="text-gradient-brand">Tudo automático.</span>
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              O AUTO-Z captura leads de todos os canais onde o seu stand está
+              O autoz captura leads de todos os canais onde o seu stand está
               presente — portais, redes sociais e mensagens — sem qualquer
               configuração técnica da sua parte.
             </p>

@@ -37,7 +37,7 @@ __turbopack_context__.s([
     ()=>skills
 ]);
 const siteConfig = {
-    name: 'AUTO-Z',
+    name: 'autoz',
     nameSuffix: 'TECH',
     tagline: 'Automatize o Seu Stand Automóvel com IA',
     description: 'Qualifique Leads 24/7 em Portugal',
@@ -357,7 +357,7 @@ const plans = [
             'Suporte prioritário'
         ],
         insight: 'Nem todos os stands precisam deste plano. Mas quando o volume cresce, este plano evita o caos.',
-        cta: 'Falar com a equipa AUTO-Z',
+        cta: 'Falar com a equipa autoz',
         highlighted: false,
         ctaVariant: 'whatsapp'
     }
@@ -651,7 +651,7 @@ function Navbar() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                             href: "#",
-                            className: "flex items-center gap-1 group",
+                            className: "flex items-center gap-0 group",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-display font-bold text-xl text-white tracking-tight group-hover:text-white/90 transition-colors",
@@ -663,7 +663,7 @@ function Navbar() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-display font-bold text-xl text-gradient-brand tracking-tight",
-                                    children: "-Z"
+                                    children: "Z"
                                 }, void 0, false, {
                                     fileName: "[project]/components/layout/Navbar.tsx",
                                     lineNumber: 75,
@@ -943,7 +943,7 @@ function Footer() {
                             className: "col-span-2 space-y-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-1",
+                                    className: "flex items-center gap-0",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-display font-bold text-xl text-white",
@@ -955,7 +955,7 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-display font-bold text-xl text-gradient-brand",
-                                            children: "-Z"
+                                            children: "Z"
                                         }, void 0, false, {
                                             fileName: "[project]/components/layout/Footer.tsx",
                                             lineNumber: 19,
@@ -3317,7 +3317,7 @@ function WhatsAppPhone({ visible, showTyping }) {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-white text-[13.5px] font-semibold leading-tight",
-                                                        children: "Auto-Z Agent"
+                                                        children: "autoz Agent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/LiveDemo.tsx",
                                                         lineNumber: 160,
@@ -4801,7 +4801,7 @@ function Integrations() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-slate-400 leading-relaxed",
-                                    children: "O AUTO-Z captura leads de todos os canais onde o seu stand está presente — portais, redes sociais e mensagens — sem qualquer configuração técnica da sua parte."
+                                    children: "O autoz captura leads de todos os canais onde o seu stand está presente — portais, redes sociais e mensagens — sem qualquer configuração técnica da sua parte."
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Integrations.tsx",
                                     lineNumber: 44,

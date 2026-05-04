@@ -1324,6 +1324,10 @@ img, video {
   gap: 1px;
 }
 
+.gap-0 {
+  gap: 0;
+}
+
 .gap-x-5 {
   -moz-column-gap: 1.25rem;
   column-gap: 1.25rem;

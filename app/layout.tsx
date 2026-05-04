@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'AUTO-Z — Automatize o Seu Stand Automóvel com IA',
+  title: 'autoz — Automatize o Seu Stand Automóvel com IA',
   description:
     'Qualifique leads 24/7 em Portugal. O ATZ Agent responde em menos de 30 segundos, qualifica cada lead e entrega contactos com intenção real de compra.',
   keywords: [
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     'IA stand automóvel Portugal',
     'resposta automática leads',
     'ATZ Agent',
-    'AUTO-Z',
+    'autoz',
   ],
   openGraph: {
-    title: 'AUTO-Z — Automatize o Seu Stand Automóvel com IA',
+    title: 'autoz — Automatize o Seu Stand Automóvel com IA',
     description:
       'O seu stand perde leads todos os dias. Nós garantimos que nenhum fica sem resposta.',
     type: 'website',

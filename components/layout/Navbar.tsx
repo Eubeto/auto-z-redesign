@@ -68,12 +68,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-1 group">
+          <a href="#" className="flex items-center gap-0 group">
             <span className="font-display font-bold text-xl text-white tracking-tight group-hover:text-white/90 transition-colors">
               AUTO
             </span>
             <span className="font-display font-bold text-xl text-gradient-brand tracking-tight">
-              -Z
+              Z
             </span>
           </a>
 

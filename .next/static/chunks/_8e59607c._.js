@@ -24,7 +24,7 @@ function ThemeProvider(param) {
     const [theme, setTheme] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('dark');
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ThemeProvider.useEffect": ()=>{
-            const saved = localStorage.getItem('auto-z-theme');
+            const saved = localStorage.getItem('autoz-theme');
             if (saved) {
                 setTheme(saved);
                 document.documentElement.classList.toggle('light', saved === 'light');
@@ -35,7 +35,7 @@ function ThemeProvider(param) {
         const next = theme === 'dark' ? 'light' : 'dark';
         setTheme(next);
         document.documentElement.classList.toggle('light', next === 'light');
-        localStorage.setItem('auto-z-theme', next);
+        localStorage.setItem('autoz-theme', next);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ThemeContext.Provider, {
         value: {
@@ -96,11 +96,11 @@ function LangProvider(param) {
     const [lang, setLangState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('pt');
     const setLang = (l)=>{
         setLangState(l);
-        localStorage.setItem('auto-z-lang', l);
+        localStorage.setItem('autoz-lang', l);
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "LangProvider.useEffect": ()=>{
-            const saved = localStorage.getItem('auto-z-lang');
+            const saved = localStorage.getItem('autoz-lang');
             if (saved && [
                 'pt',
                 'en',

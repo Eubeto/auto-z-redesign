@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'AUTO-Z',
+  name: 'autoz',
   nameSuffix: 'TECH',
   tagline: 'Automatize o Seu Stand Automóvel com IA',
   description: 'Qualifique Leads 24/7 em Portugal',
@@ -309,7 +309,7 @@ export const plans: Plan[] = [
     ],
     insight:
       'Nem todos os stands precisam deste plano. Mas quando o volume cresce, este plano evita o caos.',
-    cta: 'Falar com a equipa AUTO-Z',
+    cta: 'Falar com a equipa autoz',
     highlighted: false,
     ctaVariant: 'whatsapp',
   },

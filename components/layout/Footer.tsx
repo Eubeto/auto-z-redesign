@@ -14,9 +14,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="col-span-2 space-y-4">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-0">
               <span className="font-display font-bold text-xl text-white">AUTO</span>
-              <span className="font-display font-bold text-xl text-gradient-brand">-Z</span>
+              <span className="font-display font-bold text-xl text-gradient-brand">Z</span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
               {footer.tagline}

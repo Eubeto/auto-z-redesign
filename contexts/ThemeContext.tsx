@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
 
   useEffect(() => {
-    const saved = localStorage.getItem('auto-z-theme') as Theme | null
+    const saved = localStorage.getItem('autoz-theme') as Theme | null
     if (saved) {
       setTheme(saved)
       document.documentElement.classList.toggle('light', saved === 'light')
@@ -24,7 +24,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     document.documentElement.classList.toggle('light', next === 'light')
-    localStorage.setItem('auto-z-theme', next)
+    localStorage.setItem('autoz-theme', next)
   }
 
   return (

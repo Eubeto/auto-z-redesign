@@ -99,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Desenvolvimentos\\auto-z-redesign",
+    "outputFileTracingRoot": "C:\\Desenvolvimentos\\autoz-redesign",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -290,10 +290,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "C:\\Desenvolvimentos\\auto-z-redesign"
+      "root": "C:\\Desenvolvimentos\\autoz-redesign"
     }
   },
-  "appDir": "C:\\Desenvolvimentos\\auto-z-redesign",
+  "appDir": "C:\\Desenvolvimentos\\autoz-redesign",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

@@ -37,7 +37,7 @@ __turbopack_context__.s([
     ()=>skills
 ]);
 const siteConfig = {
-    name: 'AUTO-Z',
+    name: 'autoz',
     nameSuffix: 'TECH',
     tagline: 'Automatize o Seu Stand Automóvel com IA',
     description: 'Qualifique Leads 24/7 em Portugal',
@@ -357,7 +357,7 @@ const plans = [
             'Suporte prioritário'
         ],
         insight: 'Nem todos os stands precisam deste plano. Mas quando o volume cresce, este plano evita o caos.',
-        cta: 'Falar com a equipa AUTO-Z',
+        cta: 'Falar com a equipa autoz',
         highlighted: false,
         ctaVariant: 'whatsapp'
     }
@@ -1911,7 +1911,7 @@ function Problem() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs font-semibold text-blue-400 uppercase tracking-widest mb-5",
-                                            children: "Com AUTO-Z"
+                                            children: "Com autoz"
                                         }, void 0, false, {
                                             fileName: "[project]/components/sections/Problem.tsx",
                                             lineNumber: 149,
@@ -2355,7 +2355,7 @@ function Integrations() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-slate-400 leading-relaxed",
-                                    children: "O AUTO-Z captura leads de todos os canais onde o seu stand está presente — portais, redes sociais e mensagens — sem qualquer configuração técnica da sua parte."
+                                    children: "O autoz captura leads de todos os canais onde o seu stand está presente — portais, redes sociais e mensagens — sem qualquer configuração técnica da sua parte."
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Integrations.tsx",
                                     lineNumber: 44,
@@ -3221,7 +3221,7 @@ function ROI() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-slate-400 leading-relaxed",
-                                    children: "Um único carro não vendido paga vários meses de AUTO-Z. O investimento não é no plano — é nos leads que já não vai perder."
+                                    children: "Um único carro não vendido paga vários meses de autoz. O investimento não é no plano — é nos leads que já não vai perder."
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/ROI.tsx",
                                     lineNumber: 28,
@@ -3310,7 +3310,7 @@ function ROI() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xs text-slate-500 uppercase tracking-widest font-semibold mb-6",
-                                    children: "Com AUTO-Z"
+                                    children: "Com autoz"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/ROI.tsx",
                                     lineNumber: 61,
@@ -4437,7 +4437,7 @@ function FinalCTA() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xs text-slate-600 uppercase tracking-widest mb-6 font-semibold",
-                                    children: "Porque AUTO-Z é diferente"
+                                    children: "Porque autoz é diferente"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/FinalCTA.tsx",
                                     lineNumber: 77,

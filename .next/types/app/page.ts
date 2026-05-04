@@ -1,4 +1,4 @@
-// File: C:\Desenvolvimentos\auto-z-redesign\app\page.tsx
+// File: C:\Desenvolvimentos\autoz-redesign\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
