@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Car, DollarSign, Phone, User, Zap, MessageCircle, MapPin, Clock } from 'lucide-react'
 import SectionLabel from '@/components/ui/SectionLabel'
+import { useLang } from '@/contexts/LangContext'
 
 /* ─── Data ─────────────────────────────────────────── */
 
@@ -466,6 +467,7 @@ function CrmPanel({
 /* ─── Main section ──────────────────────────────────── */
 
 export default function LiveDemo() {
+  const { tr } = useLang()
   const [phase, setPhase] = useState<'idle' | 'running' | 'done'>('idle')
   const [visibleMessages, setVisibleMessages] = useState(0)
   const [fieldsVisible, setFieldsVisible] = useState(0)
@@ -548,14 +550,14 @@ export default function LiveDemo() {
           className="text-center space-y-4 mb-16"
         >
           <SectionLabel variant="green" className="mx-auto">
-            Demo ao Vivo
+            {tr.liveDemo.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white">
-            Veja o agente{' '}
-            <span className="text-gradient-brand">a trabalhar</span>
+            {tr.liveDemo.title}{' '}
+            <span className="text-gradient-brand">{tr.liveDemo.titleAccent}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-lg mx-auto">
-            Cada mensagem qualifica o lead automaticamente — sem intervenção humana.
+            {tr.liveDemo.subtitle}
           </p>
         </motion.div>
 
@@ -599,7 +601,7 @@ export default function LiveDemo() {
               onClick={replay}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.09] text-sm text-slate-400 hover:text-white hover:bg-white/[0.10] transition-all duration-200"
             >
-              ↺ Ver demo novamente
+              {tr.liveDemo.replay}
             </button>
           </motion.div>
         )}
@@ -612,11 +614,7 @@ export default function LiveDemo() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 grid grid-cols-3 gap-4 max-w-xl mx-auto"
         >
-          {[
-            { value: '0.4s', label: 'Resposta média' },
-            { value: '24/7', label: 'Sem pausas' },
-            { value: '90%', label: 'Qualificação auto.' },
-          ].map((stat, i) => (
+          {tr.liveDemo.stats.map((stat, i) => (
             <div key={i} className="text-center p-5 glass-card rounded-2xl border border-white/[0.07]">
               <p className="font-display text-2xl font-bold text-gradient-brand mb-1">{stat.value}</p>
               <p className="text-[11px] text-slate-500">{stat.label}</p>

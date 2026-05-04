@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, MessageCircle, CheckCircle } from 'lucide-react'
 import GlowButton from '@/components/ui/GlowButton'
-import { siteConfig, heroTrust } from '@/lib/data'
+import { siteConfig } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 /* ─── Chat demo data ────────────────────────────────── */
 const chatMessages = [
@@ -194,8 +195,12 @@ const itemVariants = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 }
 
+const statColors = ['text-blue-400', 'text-red-400', 'text-cyan-400', 'text-violet-400']
+
 /* ─── Section ───────────────────────────────────────── */
 export default function Hero() {
+  const { tr } = useLang()
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg-base pt-20">
       <Background />
@@ -215,7 +220,7 @@ export default function Hero() {
               <div className="hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full relative">
                 <span className="glow-dot w-2 h-2 relative z-10" />
                 <span className="text-blue-400 text-xs font-semibold tracking-widest uppercase relative z-10">
-                  ATZ Agent · Para Stands Automóveis
+                  {tr.hero.badge}
                 </span>
               </div>
             </motion.div>
@@ -223,25 +228,25 @@ export default function Hero() {
             {/* Headline */}
             <motion.div variants={itemVariants}>
               <h1 className="font-display text-5xl sm:text-6xl lg:text-[68px] font-bold leading-[1.05] tracking-tight">
-                <span className="text-gradient-hero">Automatize o Seu</span>
+                <span className="text-gradient-hero">{tr.hero.h1[0]}</span>
                 <br />
-                <span className="text-white">Stand Automóvel</span>
+                <span className="text-white">{tr.hero.h1[1]}</span>
                 <br />
-                <span className="text-gradient-brand">com IA</span>
+                <span className="text-gradient-brand">{tr.hero.h1[2]}</span>
               </h1>
             </motion.div>
 
             {/* Sub-heading */}
             <motion.div variants={itemVariants}>
               <p className="text-xl text-slate-300 font-medium">
-                Qualifique Leads 24/7 em Portugal
+                {tr.hero.subtitle}
               </p>
             </motion.div>
 
             {/* Body copy */}
             <motion.div variants={itemVariants}>
               <p className="text-base text-slate-400 leading-relaxed max-w-xl">
-                {siteConfig.mainMessage}
+                {tr.hero.body}
               </p>
             </motion.div>
 
@@ -253,7 +258,7 @@ export default function Hero() {
                 href={siteConfig.whatsapp}
                 icon={<MessageCircle size={18} />}
               >
-                Falar connosco no WhatsApp
+                {tr.hero.ctaWhatsapp}
               </GlowButton>
               <GlowButton
                 variant="outline"
@@ -261,7 +266,7 @@ export default function Hero() {
                 href="#funcionalidades"
                 icon={<ArrowRight size={18} />}
               >
-                Ver como funciona
+                {tr.hero.ctaHow}
               </GlowButton>
             </motion.div>
 
@@ -270,7 +275,7 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1"
             >
-              {heroTrust.map((item, i) => (
+              {tr.hero.trust.map((item, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-xs text-slate-500">
                   <CheckCircle size={12} className="text-blue-500/80 flex-shrink-0" />
                   {item}
@@ -296,19 +301,14 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.85 }}
           className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          {[
-            { value: '100+',   label: 'Leads/dia em stands médios',   color: 'text-blue-400' },
-            { value: '30–40%', label: 'Leads sem resposta em 24h',    color: 'text-red-400'  },
-            { value: '7×',     label: 'Mais conversões <1h resposta', color: 'text-cyan-400' },
-            { value: '6h/dia', label: 'Gastas só a responder',        color: 'text-violet-400' },
-          ].map((stat, i) => (
+          {tr.hero.stats.map((stat, i) => (
             <div
               key={i}
               className="relative glass-card rounded-2xl px-5 py-5 text-center border border-white/[0.07] overflow-hidden group hover:border-white/[0.12] transition-all duration-300"
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <p className={`font-display text-2xl font-bold mb-1.5 ${stat.color}`}>
+              <p className={`font-display text-2xl font-bold mb-1.5 ${statColors[i]}`}>
                 {stat.value}
               </p>
               <p className="text-xs text-slate-500 leading-tight">{stat.label}</p>

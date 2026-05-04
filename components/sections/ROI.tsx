@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
-import { roiData } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 export default function ROI() {
+  const { tr } = useLang()
+
   return (
     <section className="relative py-24 lg:py-32 bg-bg-base overflow-hidden">
       {/* Decorative line */}
@@ -20,21 +22,21 @@ export default function ROI() {
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <SectionLabel variant="blue">Retorno sobre Investimento</SectionLabel>
+            <SectionLabel variant="blue">{tr.roi.label}</SectionLabel>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-              ROI positivo{' '}
-              <span className="text-gradient-brand">desde o dia 1</span>
+              {tr.roi.title}{' '}
+              <span className="text-gradient-brand">{tr.roi.titleAccent}</span>
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              Um único carro não vendido paga vários meses de AUTO-Z. O investimento não é no plano — é nos leads que já não vai perder.
+              {tr.roi.subtitle}
             </p>
 
             {/* Cost breakdown */}
             <div className="space-y-3 pt-2">
               <p className="text-xs text-slate-500 uppercase tracking-widest font-semibold mb-4">
-                Custos actuais do seu stand
+                {tr.roi.costsLabel}
               </p>
-              {roiData.costs.map((cost, i) => (
+              {tr.roi.costs.map((cost, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -12 }}
@@ -59,10 +61,10 @@ export default function ROI() {
             className="space-y-4"
           >
             <p className="text-xs text-slate-500 uppercase tracking-widest font-semibold mb-6">
-              Com AUTO-Z
+              {tr.roi.withAutoZ}
             </p>
 
-            {roiData.benefits.map((benefit, i) => (
+            {tr.roi.benefits.map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 12 }}
@@ -87,9 +89,8 @@ export default function ROI() {
               className="mt-6 p-6 rounded-2xl bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20"
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                <span className="text-white font-semibold">Vendedores focados em fechar.</span>{' '}
-                A IA trata de tudo o resto — qualificação, resposta, follow-up.
-                Sem horas desperdiçadas. Sem leads perdidos.
+                <span className="text-white font-semibold">{tr.roi.highlightBold}</span>{' '}
+                {tr.roi.highlightRest}
               </p>
             </motion.div>
           </motion.div>

@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Inbox, AlertTriangle, TrendingUp, Clock } from 'lucide-react'
 import SectionLabel from '@/components/ui/SectionLabel'
 import AnimatedNumber from '@/components/ui/AnimatedNumber'
-import { problemStats, problemsResolved } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 const icons = [Inbox, AlertTriangle, TrendingUp, Clock]
 
@@ -46,6 +46,7 @@ const cardVariants = {
 }
 
 export default function Problem() {
+  const { tr } = useLang()
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-15% 0px' })
 
@@ -76,20 +77,21 @@ export default function Problem() {
           className="text-center space-y-5 mb-16"
         >
           <SectionLabel variant="blue" className="mx-auto">
-            O Problema
+            {tr.problem.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white max-w-3xl mx-auto leading-tight">
-            Quantos leads do seu stand ficam{' '}
-            <span className="text-gradient-brand">sem resposta</span> esta semana?
+            {tr.problem.title}{' '}
+            <span className="text-gradient-brand">{tr.problem.titleAccent}</span>{' '}
+            {tr.problem.titleEnd}
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            O problema não é falta de leads. É falta de controlo sobre eles.
+            {tr.problem.subtitle}
           </p>
         </motion.div>
 
         {/* Stats Cards */}
         <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-          {problemStats.map((stat, i) => {
+          {tr.problem.stats.map((stat, i) => {
             const Icon = icons[i]
             const colors = colorMap[stat.color as keyof typeof colorMap]
             return (
@@ -117,7 +119,7 @@ export default function Problem() {
                   )}
                 </div>
                 <p className="text-white font-semibold text-sm mb-1">{stat.label}</p>
-                <p className="text-slate-500 text-xs leading-relaxed">{stat.description}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{stat.desc}</p>
               </motion.div>
             )
           })}
@@ -134,26 +136,26 @@ export default function Problem() {
           <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
             <div className="p-6 lg:p-8">
               <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-5">
-                Situação Actual
+                {tr.problem.situationLabel}
               </p>
               <div className="space-y-4">
-                {problemsResolved.map((item, i) => (
+                {tr.problem.problems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 flex-shrink-0" />
-                    <span className="text-sm text-slate-400">{item.problem}</span>
+                    <span className="text-sm text-slate-400">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="p-6 lg:p-8">
               <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-5">
-                Com AUTO-Z
+                {tr.problem.solutionLabel}
               </p>
               <div className="space-y-4">
-                {problemsResolved.map((item, i) => (
+                {tr.problem.solutions.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0" />
-                    <span className="text-sm text-slate-300">{item.solution}</span>
+                    <span className="text-sm text-slate-300">{item}</span>
                   </div>
                 ))}
               </div>

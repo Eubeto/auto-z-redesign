@@ -6,13 +6,14 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Quote } from 'lucide-react'
 import SectionLabel from '@/components/ui/SectionLabel'
-import { caseStudy } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
 export default function CaseStudy() {
+  const { tr } = useLang()
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -58,13 +59,14 @@ export default function CaseStudy() {
           className="text-center space-y-5 mb-16"
         >
           <SectionLabel variant="green" className="mx-auto">
-            Caso Real
+            {tr.caseStudy.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            <span className="text-gradient-brand">{caseStudy.company}</span> — Antes e Depois
+            <span className="text-gradient-brand">{tr.caseStudy.titleAccent}</span>{' '}
+            {tr.caseStudy.titleSuffix}
           </h2>
           <p className="text-lg text-slate-400">
-            Resultados reais num stand português em 30 dias.
+            {tr.caseStudy.subtitle}
           </p>
         </motion.div>
 
@@ -83,11 +85,11 @@ export default function CaseStudy() {
                 <div className="w-2 h-2 rounded-full bg-red-500" />
               </div>
               <span className="text-sm font-semibold text-red-400 uppercase tracking-widest">
-                Antes
+                {tr.caseStudy.beforeLabel}
               </span>
             </div>
             <ul className="space-y-4">
-              {caseStudy.before.map((item, i) => (
+              {tr.caseStudy.before.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-red-500 mt-0.5 flex-shrink-0">✕</span>
                   <span className="text-sm text-slate-400">{item}</span>
@@ -109,11 +111,11 @@ export default function CaseStudy() {
                 <div className="w-2 h-2 rounded-full bg-green-500" />
               </div>
               <span className="text-sm font-semibold text-green-400 uppercase tracking-widest">
-                Depois
+                {tr.caseStudy.afterLabel}
               </span>
             </div>
             <ul className="space-y-4">
-              {caseStudy.after.map((item, i) => (
+              {tr.caseStudy.after.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-sm text-slate-300">{item}</span>
@@ -125,11 +127,7 @@ export default function CaseStudy() {
 
         {/* Key Metrics */}
         <div className="grid grid-cols-3 gap-4 mb-12">
-          {[
-            { value: '0%', label: 'Leads sem resposta', color: 'text-green-400' },
-            { value: '+25%', label: 'Conversão em 30 dias', color: 'text-blue-400' },
-            { value: '90%', label: 'Leads qualificados auto.', color: 'text-cyan-400' },
-          ].map((metric, i) => (
+          {tr.caseStudy.metrics.map((metric, i) => (
             <div
               key={i}
               className="case-metric opacity-0 text-center p-5 glass-card rounded-2xl border border-white/[0.06]"
@@ -157,15 +155,15 @@ export default function CaseStudy() {
           />
           <blockquote className="relative z-10">
             <p className="font-display text-xl lg:text-2xl text-white font-medium leading-relaxed mb-6 pl-8">
-              &ldquo;{caseStudy.testimonial}&rdquo;
+              &ldquo;{tr.caseStudy.testimonial}&rdquo;
             </p>
             <div className="flex items-center gap-3 pl-8">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
                 <span className="text-xs font-bold text-white">GT</span>
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">{caseStudy.author}</p>
-                <p className="text-xs text-slate-500">{caseStudy.company}</p>
+                <p className="text-sm font-semibold text-white">{tr.caseStudy.testimonialAuthor}</p>
+                <p className="text-xs text-slate-500">{tr.caseStudy.testimonialCompany}</p>
               </div>
             </div>
           </blockquote>

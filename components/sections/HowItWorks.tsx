@@ -5,13 +5,14 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionLabel from '@/components/ui/SectionLabel'
-import { howItWorksSteps, howItWorksResults } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
 export default function HowItWorks() {
+  const { tr } = useLang()
   const sectionRef = useRef<HTMLDivElement>(null)
   const stepsRef = useRef<HTMLDivElement>(null)
 
@@ -53,14 +54,14 @@ export default function HowItWorks() {
           className="text-center space-y-5 mb-20"
         >
           <SectionLabel variant="cyan" className="mx-auto">
-            Como Funciona
+            {tr.howItWorks.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white max-w-2xl mx-auto leading-tight">
-            4 Etapas.{' '}
-            <span className="text-gradient-brand">Leads Qualificados.</span>
+            {tr.howItWorks.title}{' '}
+            <span className="text-gradient-brand">{tr.howItWorks.titleAccent}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-lg mx-auto">
-            Da chegada do lead ao vendedor certo, sem fricção, sem ruído.
+            {tr.howItWorks.subtitle}
           </p>
         </motion.div>
 
@@ -69,7 +70,7 @@ export default function HowItWorks() {
           ref={stepsRef}
           className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.04] rounded-2xl overflow-hidden border border-white/[0.06] mb-12"
         >
-          {howItWorksSteps.map((step, i) => (
+          {tr.howItWorks.steps.map((step, i) => (
             <div
               key={i}
               className="step-card opacity-0 bg-bg-surface p-8 relative group hover:bg-bg-card transition-colors duration-300"
@@ -97,7 +98,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Arrow connector */}
-              {i < howItWorksSteps.length - 1 && (
+              {i < tr.howItWorks.steps.length - 1 && (
                 <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
                   <div className="w-6 h-6 rounded-full bg-bg-base border border-blue-500/30 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-blue-500" />
@@ -116,7 +117,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-3 gap-4"
         >
-          {howItWorksResults.map((result, i) => (
+          {tr.howItWorks.results.map((result, i) => (
             <div
               key={i}
               className="text-center p-6 glass-card rounded-2xl border border-white/[0.06]"
