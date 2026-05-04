@@ -3,11 +3,14 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Badge from '@/components/ui/Badge'
-import { skills } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 export default function Skills() {
-  const activeSkills = skills.filter((s) => s.status === 'Ativo')
-  const addonSkills = skills.filter((s) => s.status === 'Add-on')
+  const { tr } = useLang()
+  const { skills } = tr
+
+  const activeSkills = skills.items.filter((s) => s.status === 'Ativo')
+  const addonSkills = skills.items.filter((s) => s.status === 'Add-on')
 
   return (
     <section id="skills" className="relative py-24 lg:py-32 bg-bg-surface">
@@ -21,21 +24,21 @@ export default function Skills() {
           className="text-center space-y-5 mb-16"
         >
           <SectionLabel variant="violet" className="mx-auto">
-            Skills
+            {skills.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Um Agente.{' '}
-            <span className="text-gradient-vibrant">Todas as Skills.</span>
+            {skills.title}{' '}
+            <span className="text-gradient-vibrant">{skills.titleAccent}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-lg mx-auto">
-            O ATZ Agent adapta-se ao processo do seu stand com skills especializadas e extensíveis.
+            {skills.subtitle}
           </p>
         </motion.div>
 
         {/* Active skills */}
         <div className="mb-6">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4 text-center">
-            Skills activas por defeito
+            {skills.activeLabel}
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {activeSkills.map((skill, i) => (
@@ -53,10 +56,10 @@ export default function Skills() {
                       <h3 className="font-display text-xl font-bold text-white">
                         {skill.name}
                       </h3>
-                      <Badge variant="active">Ativo</Badge>
+                      <Badge variant="active">{skills.activeBadge}</Badge>
                     </div>
                     <p className="text-sm text-slate-400 leading-relaxed">
-                      {skill.description}
+                      {skill.desc}
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center flex-shrink-0">
@@ -73,7 +76,7 @@ export default function Skills() {
         {/* Add-on skills */}
         <div>
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4 text-center">
-            Skills extensíveis — Add-ons
+            {skills.addonLabel}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {addonSkills.map((skill, i) => (
@@ -89,10 +92,10 @@ export default function Skills() {
                   <h3 className="font-display text-base font-bold text-white">
                     {skill.name}
                   </h3>
-                  <Badge variant="addon">Add-on</Badge>
+                  <Badge variant="addon">{skills.addonBadge}</Badge>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  {skill.description}
+                  {skill.desc}
                 </p>
               </motion.div>
             ))}
@@ -108,8 +111,8 @@ export default function Skills() {
           className="mt-12 text-center"
         >
           <p className="text-sm text-slate-500">
-            Isto não é marketing. É{' '}
-            <span className="text-slate-300 font-medium">operação comercial.</span>
+            {skills.bottomNote}{' '}
+            <span className="text-slate-300 font-medium">{skills.bottomNoteAccent}</span>
           </p>
         </motion.div>
       </div>

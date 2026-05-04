@@ -3,8 +3,12 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, CheckCircle } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 export default function FinalCTA() {
+  const { tr } = useLang()
+  const { finalCta } = tr
+
   return (
     <section
       id="contacto"
@@ -29,20 +33,19 @@ export default function FinalCTA() {
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-green-500/25 bg-green-500/8 text-green-400 text-xs font-semibold tracking-widest uppercase">
             <span className="glow-dot" />
-            Diagnóstico Gratuito
+            {finalCta.badge}
           </div>
 
           {/* Headline */}
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Quer saber quantos leads
+            {finalCta.title}
             <br />
-            <span className="text-gradient-brand">o seu stand está a perder?</span>
+            <span className="text-gradient-brand">{finalCta.titleAccent}</span>
           </h2>
 
           {/* Description */}
           <p className="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Fazemos um diagnóstico gratuito ao seu fluxo de leads e mostramos
-            onde o dinheiro está a escapar.
+            {finalCta.subtitle}
           </p>
 
           {/* CTA */}
@@ -56,36 +59,27 @@ export default function FinalCTA() {
               whileTap={{ scale: 0.98 }}
             >
               <MessageCircle size={20} />
-              Falar connosco no WhatsApp
+              {finalCta.cta}
             </motion.a>
           </div>
 
           {/* Trust */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            {['Sem compromisso', 'Resposta imediata', 'ROI em menos de 30 dias'].map(
-              (item, i) => (
-                <div key={i} className="flex items-center gap-1.5 text-sm text-slate-500">
-                  <CheckCircle size={13} className="text-green-500" />
-                  {item}
-                </div>
-              )
-            )}
+            {finalCta.trust.map((item, i) => (
+              <div key={i} className="flex items-center gap-1.5 text-sm text-slate-500">
+                <CheckCircle size={13} className="text-green-500" />
+                {item}
+              </div>
+            ))}
           </div>
 
           {/* Differentiators */}
           <div className="pt-8 border-t border-white/[0.06]">
             <p className="text-xs text-slate-600 uppercase tracking-widest mb-6 font-semibold">
-              Porque AUTO-Z é diferente
+              {finalCta.whyLabel}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-3xl mx-auto">
-              {[
-                'Treinado para o mercado português',
-                'Construído de raiz para stands',
-                'Implementação assistida incluída',
-                'Skills personalizadas',
-                'Foco em vendas perdidas',
-                'Sem dependência técnica',
-              ].map((item, i) => (
+              {finalCta.why.map((item, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-2 p-3 glass-card rounded-xl border border-white/[0.05] text-left"

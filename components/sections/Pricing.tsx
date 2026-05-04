@@ -4,9 +4,13 @@ import { motion } from 'framer-motion'
 import { Check, MessageCircle, ArrowRight } from 'lucide-react'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Badge from '@/components/ui/Badge'
-import { plans, siteConfig } from '@/lib/data'
+import { siteConfig } from '@/lib/data'
+import { useLang } from '@/contexts/LangContext'
 
 export default function Pricing() {
+  const { tr } = useLang()
+  const { pricing } = tr
+
   return (
     <section id="precos" className="relative py-24 lg:py-32 bg-bg-base overflow-hidden">
       {/* Background glow */}
@@ -23,20 +27,20 @@ export default function Pricing() {
           className="text-center space-y-5 mb-16"
         >
           <SectionLabel variant="violet" className="mx-auto">
-            Preços
+            {pricing.label}
           </SectionLabel>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Escolha o plano{' '}
-            <span className="text-gradient-brand">certo para o seu stand</span>
+            {pricing.title}{' '}
+            <span className="text-gradient-brand">{pricing.titleAccent}</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            O custo real não está no plano. Está nos leads perdidos.
+            {pricing.subtitle}
           </p>
         </motion.div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-5 lg:gap-6 mb-12">
-          {plans.map((plan, i) => (
+          {pricing.plans.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
@@ -148,14 +152,14 @@ export default function Pricing() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-widest uppercase mb-5">
               <span className="glow-dot w-1.5 h-1.5" />
-              Starter vs Pro
+              {pricing.whyPro.badge}
             </div>
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-2">
-              Porque a maioria escolhe{' '}
-              <span className="text-gradient-brand">Pro</span>
+              {pricing.whyPro.title}{' '}
+              <span className="text-gradient-brand">{pricing.whyPro.titleAccent}</span>
             </h3>
             <p className="text-slate-500 text-sm max-w-md mx-auto">
-              A diferença não está no preço — está no que acontece a cada lead.
+              {pricing.whyPro.subtitle}
             </p>
           </div>
 
@@ -164,70 +168,21 @@ export default function Pricing() {
             {/* Header row */}
             <div className="grid grid-cols-[1fr_140px_160px] lg:grid-cols-[1fr_180px_200px] bg-white/[0.025] border-b border-white/[0.06] px-5 py-3.5">
               <div className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest">
-                Cenário real
+                {pricing.whyPro.comparisonHeader[0]}
               </div>
               <div className="text-center">
                 <span className="px-3 py-1 rounded-lg bg-white/[0.05] border border-white/[0.08] text-[10px] font-semibold text-slate-400 uppercase tracking-wide">
-                  Starter
+                  {pricing.whyPro.comparisonHeader[1]}
                 </span>
               </div>
               <div className="text-center">
                 <span className="px-3 py-1 rounded-lg bg-blue-500/15 border border-blue-500/30 text-[10px] font-semibold text-blue-400 uppercase tracking-wide">
-                  Pro ✦
+                  {pricing.whyPro.comparisonHeader[2]}
                 </span>
               </div>
             </div>
 
-            {[
-              {
-                scenario: 'Lead chega às 23h',
-                starter: 'Responde automaticamente',
-                pro: 'Responde, qualifica e prioriza',
-                proHighlight: true,
-              },
-              {
-                scenario: '5 leads simultâneos',
-                starter: 'Responde sequencialmente',
-                pro: 'Todos tratados em paralelo',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Lead não responde em 24h',
-                starter: 'Aguarda indefinidamente',
-                pro: 'Re-engagement automático',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Orçamento fora do stock',
-                starter: 'Informa o cliente',
-                pro: 'Sugere 3 alternativas com fit',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Lead HOT identificado',
-                starter: 'Marca como interessante',
-                pro: 'Notifica + rota ao vendedor certo',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Múltiplos canais (WA + email)',
-                starter: 'Só WhatsApp',
-                pro: 'WhatsApp + email + SMS',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Relatório de conversão',
-                starter: 'Básico mensal',
-                pro: 'Dashboard live + score por lead',
-                proHighlight: true,
-              },
-              {
-                scenario: 'Integração CRM',
-                starter: '—',
-                pro: 'Sim, em tempo real',
-                proHighlight: true,
-              },
-            ].map((row, i) => (
+            {pricing.whyPro.rows.map((row, i) => (
               <div
                 key={i}
                 className={`grid grid-cols-[1fr_140px_160px] lg:grid-cols-[1fr_180px_200px] px-5 py-4 border-b border-white/[0.04] items-center transition-colors duration-200 hover:bg-white/[0.02] ${
@@ -259,13 +214,13 @@ export default function Pricing() {
             {/* Summary strip */}
             <div className="grid grid-cols-[1fr_140px_160px] lg:grid-cols-[1fr_180px_200px] bg-white/[0.03] px-5 py-4 border-t border-white/[0.07]">
               <div className="text-[11px] text-slate-600 font-semibold uppercase tracking-widest">
-                Em resumo
+                {pricing.whyPro.summaryLabel}
               </div>
               <div className="text-center">
-                <span className="text-[12px] text-slate-500 italic">Reactivo</span>
+                <span className="text-[12px] text-slate-500 italic">{pricing.whyPro.summaryStarter}</span>
               </div>
               <div className="text-center">
-                <span className="text-[12px] text-blue-400 font-semibold">Estratégico</span>
+                <span className="text-[12px] text-blue-400 font-semibold">{pricing.whyPro.summaryPro}</span>
               </div>
             </div>
           </div>
@@ -283,10 +238,10 @@ export default function Pricing() {
             </div>
             <div className="flex-1 text-center sm:text-left">
               <p className="text-sm font-semibold text-white">
-                92% dos stands que testam Starter passam a Pro em 60 dias
+                {pricing.whyPro.ctaStat}
               </p>
               <p className="text-xs text-slate-500 mt-0.5">
-                A diferença de conversão é imediata e mensurável.
+                {pricing.whyPro.ctaStatSub}
               </p>
             </div>
             <a
@@ -295,14 +250,14 @@ export default function Pricing() {
               rel="noopener noreferrer"
               className="btn-primary flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
             >
-              Começar no Pro
+              {pricing.whyPro.ctaBtn}
               <ArrowRight size={14} />
             </a>
           </motion.div>
         </motion.div>
 
         <p className="text-center text-xs text-slate-600 mt-8">
-          Valores acrescem IVA à taxa legal em vigor. Preços para empresas. IVA dedutível nos termos legais.
+          {pricing.vatNote}
         </p>
       </div>
     </section>
